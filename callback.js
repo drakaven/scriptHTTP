@@ -1,5 +1,3 @@
-const https = require("https");
-
 const getAndPrintHTML = function (options, callback) {
 
   /* Add your code here */
