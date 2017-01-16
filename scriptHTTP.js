@@ -17,11 +17,36 @@ var getAndPrintHTMLChunks = function() {
   })
 }
 
+/*
 var getAndPrintHTML = function() {
 
   var requestOptions = {
     host: 'sytantris.github.io',
     path: '/http-examples/step2.html'
+  };
+  https.get(requestOptions, function(response) {
+    response.setEncoding('utf8');
+
+    var chunks = "";
+
+    response.on('data', function(data) {
+      chunks += data;
+    });
+
+    response.on('end', function() {
+      console.log(chunks);
+    })
+  });
+}
+*/
+
+
+const getAndPrintHTML = function (options) {
+
+  /* Add your code here */
+  var requestOptions = {
+    host: options.host,
+    path: options.path
   };
   https.get(requestOptions, function(response) {
     response.setEncoding('utf8');
@@ -36,7 +61,12 @@ var getAndPrintHTML = function() {
       console.log(chunks);
     })
   });
+
 }
 
+var requestOptions = {
+  host: 'sytantris.github.io',
+  path: '/http-examples/step3.html'
+};
 
-getAndPrintHTML();
+getAndPrintHTML(requestOptions);
