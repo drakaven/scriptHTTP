@@ -18,7 +18,7 @@ module.exports = {
       });
 
       response.on('end', function() {
-        console.log(chunks);
+        callback(chunks);
       })
 
     });
